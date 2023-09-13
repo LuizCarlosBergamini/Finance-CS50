@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <h1 class="text-center">History</h1>
+
+    <div class="w-100 position-relative" style="height: 1000px;">
+        <table class="w-75 position-absolute top-position start-50 translate-middle table mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">Stock Symbol</th>
+                    <th scope="col">Shares</th>
+                    <th scope="col">Transaction</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for transaction in transactions %}
+                <tr>
+                    <th scope="row">{{ transaction.stock }}</th>
+                    <th>{{ transaction.shares }}</th>
+                    <th>{{ transaction.transaction_desc }}</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

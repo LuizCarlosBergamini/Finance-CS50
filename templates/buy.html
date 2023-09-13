@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+    <form class="container text-center" action="/buy" method="POST">
+        <div class="row">
+            <div class="col-6 col-sm-4 mb-2 mx-auto fw-semibold fs-5">Symbol</div>
+            <div class="col-6 col-sm-4 mb-2 mx-auto fw-semibold fs-5">Shares</div>
+
+            <!-- Force next columns to break to new line at md breakpoint and up -->
+            <div class="w-100 d-none d-md-block"></div>
+
+            <input autocomplete="off" autofocus class="form-control w-auto mx-auto col-6 col-sm-4" id="symbol" name="symbol" placeholder="Type a stock" type="text">
+            <input autocomplete="off" autofocus class="form-control w-auto mx-auto col-6 col-sm-4" id="shares" name="shares" placeholder="Type how many shares" type="number">
+        </div>
+        <button class="btn btn-primary" type="submit">Buy</button>
+    </form>
+{% endblock %}

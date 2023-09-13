@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="POST">
+        <select id="select-stock" class=" fs-4 form-select mx-auto w-50" aria-label="Default select example" name="symbol">
+            <option selected>Choose what to sell</option>
+            {% for stock in stocks %}
+                <option value="{{ stock.stock }}">{{ stock.stock }}</option>
+            {% endfor %}
+        </select>
+        <input class="fs-4 d-block mx-auto mt-3" autocomplete="off" placeholder="How much shares?" type="text" name="shares">
+        <button id="sell-button" class="btn btn-primary mt-5 w-25 fs-2 fw-bold" type="submit">Sell</button>
+    </form>
+{% endblock %}
